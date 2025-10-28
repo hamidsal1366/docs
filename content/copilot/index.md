@@ -13,15 +13,21 @@ introLinks:
 featuredLinks:
   startHere:
     - /copilot/get-started/what-is-github-copilot
-    - /copilot/get-started/quickstart
-    - /copilot/tutorials/quickstart-for-github-copilot-extensions-using-agents
-    - /copilot/concepts/about-copilot-coding-agent
+    - '{% ifversion fpt %}/copilot/get-started/quickstart{% endif %}'
+    - '{% ifversion fpt %}/copilot/tutorials/try-extensions{% endif %}'
+    - '{% ifversion fpt %}/copilot/concepts/agents/coding-agent{% endif %}'
+    - '{% ifversion ghec %}/copilot/get-started/choose-enterprise-plan{% endif %}'
+    - '{% ifversion ghec %}/copilot/how-tos/set-up/set-up-for-enterprise{% endif %}'
+    - '{% ifversion ghec %}/copilot/tutorials/coding-agent/pilot-coding-agent{% endif %}'
   popular:
-    - /copilot/get-started/github-copilot-features
-    - /copilot/tutorials/copilot-chat-cookbook
-    - /copilot/how-tos/completions/getting-code-suggestions-in-your-ide-with-github-copilot
-    - /copilot/how-tos/chat/asking-github-copilot-questions-in-your-ide
-    - /copilot/how-tos/github-flow/using-github-copilot-in-the-command-line
+    - /copilot/get-started/features
+    - '{% ifversion fpt %}/copilot/tutorials/copilot-chat-cookbook{% endif %}'
+    - '{% ifversion fpt %}/copilot/how-tos/get-code-suggestions/get-ide-code-suggestions{% endif %}'
+    - '{% ifversion fpt %}/copilot/how-tos/chat-with-copilot/chat-in-ide{% endif %}'
+    - '{% ifversion fpt %}/copilot/how-tos/use-copilot-for-common-tasks/use-copilot-in-the-cli{% endif %}'
+    - '{% ifversion ghec %}/copilot/how-tos/manage-and-track-spending/manage-request-allowances{% endif %}'
+    - '{% ifversion ghec %}/copilot/tutorials/roll-out-at-scale/enable-developers/drive-adoption{% endif %}'
+    - '{% ifversion ghec %}/copilot/tutorials/roll-out-at-scale/enable-developers/integrate-ai-agents{% endif %}'
 layout: product-landing
 versions:
   feature: copilot
@@ -31,8 +37,8 @@ children:
   - /how-tos
   - /reference
   - /tutorials
-  - /responsible-use-of-github-copilot-features
+  - /responsible-use
 topics:
   - Copilot
+contentType: landing
 ---
-

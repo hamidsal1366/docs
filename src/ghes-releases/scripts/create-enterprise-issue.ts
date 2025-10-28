@@ -2,7 +2,7 @@ import { readFileSync } from 'fs'
 import { basename } from 'path'
 import { Liquid } from 'liquidjs'
 import walk from 'walk-sync'
-import matter from 'gray-matter'
+import matter from '@gr2m/gray-matter'
 
 import { latest, oldestSupported } from '@/versions/lib/enterprise-server-releases'
 import { getContents } from '@/workflows/git-utils'
@@ -63,7 +63,7 @@ async function run() {
   const releaseType = process.argv[2]
   if (releaseType !== 'release' && releaseType !== 'deprecation') {
     throw new Error(
-      "Please specify either 'release' or 'deprecation'\nExample: src/versions/scripts/create-enterprise-issue.js release",
+      "Please specify either 'release' or 'deprecation'\nExample: src/versions/scripts/create-enterprise-issue.ts release",
     )
   }
 
@@ -356,7 +356,7 @@ async function isExistingIssue(
 ): Promise<boolean> {
   const { labels, searchQuery, titleMatch } = opts
   const labelQuery = labels && labels.map((label) => `label:"${encodeURI(label)}"`).join('+')
-  let query = encodeURIComponent('is:issue ' + `repo:${repo} `)
+  let query = encodeURIComponent(`is:issue repo:${repo} `)
 
   if (searchQuery) {
     query += '+' + searchQuery
